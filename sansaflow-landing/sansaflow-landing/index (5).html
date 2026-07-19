@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SansaFlow – Inhalationsmaske für Pferde. Präzise gefertig, fair kalkuliert.">
+    <title>SansaFlow – Inhalationsmaske für Pferde</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #faf8f5;
+            --color-text: #4a4a4a;
+            --color-text-dark: #2c2c2c;
+            --color-text-light: #7a7a7a;
+            --color-text-lighter: #9b8b7b;
+            --color-border: #f0ebe3;
+            --color-accent: #8B5E3C;
+            --color-accent-dark: #6b4830;
+            --color-bg-section: #f5f1ed;
+            --color-footer: #2c2c2c;
+            --font-serif: 'Lora', serif;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 48px;
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--color-text-dark);
+            text-decoration: none;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        nav a, nav span {
+            font-size: 13px;
+            text-decoration: none;
+            color: var(--color-text-light);
+            letter-spacing: 0.3px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--color-text-dark);
+        }
+
+        .nav-divider {
+            color: var(--color-text-lighter);
+        }
+
+        .btn-header {
+            background: var(--color-accent);
+            color: white;
+            padding: 10px 22px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn-header:hover {
+            background: var(--color-accent-dark);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            width: 100%;
+            padding: 100px 0 80px 0;
+            text-align: center;
+        }
+
+        .hero > * {
+            padding: 0 48px;
+        }
+
+        .hero-tag {
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            color: var(--color-text-lighter);
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 72px;
+            font-weight: 400;
+            line-height: 1.15;
+            color: var(--color-text-dark);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--color-accent);
+            font-weight: 400;
+        }
+
+        .hero-description {
+            font-size: 16px;
+            color: var(--color-text-light);
+            max-width: 650px;
+            margin: 0 auto 48px;
+            line-height: 1.75;
+        }
+
+        .hero-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            margin-bottom: 80px;
+        }
+
+        .hero-link {
+            font-size: 13px;
+            color: var(--color-text-dark);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-text-dark);
+            padding-bottom: 2px;
+            transition: opacity 0.2s;
+        }
+
+        .hero-link:hover {
+            opacity: 0.6;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+            max-width: 700px;
+            margin: 0 auto 100px;
+            background: #8B5E3C;
+            padding: 60px 40px;
+            border-radius: 2px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-serif);
+            font-size: 36px;
+            font-weight: 500;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #e8dcc8;
+            letter-spacing: 0.2px;
+        }
+
+        .product-placeholder {
+            color: var(--color-border);
+            font-size: 12px;
+            text-align: center;
+        }
+
+        /* SECTIONS */
+        section {
+            width: 100%;
+            padding: 100px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section > * {
+            padding: 0 48px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        section h2 {
+            font-family: var(--font-serif);
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--color-text-dark);
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--color-text-light);
+            font-weight: 500;
+            margin-bottom: 32px;
+            letter-spacing: 0.2px;
+        }
+
+        .section-tagline {
+            font-size: 15px;
+            color: var(--color-text-light);
+            font-weight: 400;
+            margin-bottom: 32px;
+            letter-spacing: 0.2px;
+        }
+
+        .section-intro {
+            font-size: 15px;
+            color: var(--color-text-light);
+            line-height: 1.75;
+            margin-bottom: 32px;
+        }
+
+        /* FEATURES LIST */
+        .features-list {
+            list-style: none;
+            margin-bottom: 48px;
+        }
+
+        .features-list li {
+            padding: 16px 0;
+            font-size: 15px;
+            color: var(--color-text);
+            line-height: 1.6;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .features-list li:first-child {
+            border-top: 1px solid var(--color-border);
+        }
+
+        .features-list strong {
+            font-weight: 600;
+            color: var(--color-text-dark);
+        }
+
+        /* PRODUCT SECTION LAYOUT */
+        .product-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .product-image-container {
+            aspect-ratio: 4 / 5;
+            background: var(--color-bg-section);
+            border-radius: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 500px;
+        }
+
+        .product-content {
+            padding-top: 40px;
+        }
+
+        .product-content h2 {
+            font-family: var(--font-serif);
+            font-size: 42px;
+            font-weight: 400;
+            color: var(--color-text-dark);
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .product-content .section-subtitle {
+            font-size: 13px;
+            color: var(--color-text-light);
+            font-weight: 500;
+            margin-bottom: 16px;
+            letter-spacing: 0.2px;
+        }
+
+        .product-content .section-intro {
+            font-size: 14px;
+            color: var(--color-text-light);
+            line-height: 1.75;
+            margin-bottom: 32px;
+        }
+
+        /* PRICE BOX */
+        .price-box {
+            background: var(--color-bg-section);
+            padding: 52px 40px;
+            border-radius: 2px;
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        .price-amount {
+            font-family: var(--font-serif);
+            font-size: 42px;
+            font-weight: 500;
+            color: var(--color-text-dark);
+            margin-bottom: 6px;
+        }
+
+        .price-note {
+            font-size: 11px;
+            color: var(--color-text-lighter);
+            letter-spacing: 0.2px;
+            margin-bottom: 28px;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--color-accent);
+            color: white;
+            padding: 11px 24px;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-dark);
+        }
+
+        /* ANWENDUNG SECTION */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 80px;
+            margin-top: 80px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            font-family: var(--font-serif);
+            font-size: 52px;
+            font-weight: 300;
+            color: #e8e3d8;
+            margin-bottom: 20px;
+        }
+
+        .step h3 {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--color-text-dark);
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            font-size: 14px;
+            color: var(--color-text-light);
+            line-height: 1.7;
+        }
+
+        /* APP FEATURES */
+        .app-features-list {
+            list-style: none;
+            margin: 32px 0;
+        }
+
+        .app-features-list li {
+            padding: 12px 0;
+            font-size: 15px;
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        .app-features-list strong {
+            font-weight: 600;
+            color: var(--color-text-dark);
+        }
+
+        .app-note {
+            font-size: 14px;
+            color: var(--color-text-light);
+            line-height: 1.8;
+            padding: 32px 0;
+        }
+
+        .app-button-container {
+            text-align: center;
+            margin-top: 32px;
+        }
+
+        /* QUOTE SECTION */
+        .quote-block {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-style: italic;
+            color: var(--color-text-dark);
+            padding: 52px 40px;
+            background: var(--color-bg-section);
+            border-left: 3px solid var(--color-accent);
+            margin-top: 52px;
+            margin-bottom: 28px;
+            line-height: 1.8;
+        }
+
+        .quote-author {
+            font-family: var(--font-sans);
+            font-size: 12px;
+            color: var(--color-text-light);
+            font-style: normal;
+            letter-spacing: 0.2px;
+            margin-top: 16px;
+        }
+
+        /* CTA SECTION */
+        .cta-final {
+            text-align: center;
+        }
+
+        .cta-final p {
+            font-size: 14px;
+            color: var(--color-text-light);
+            margin: 16px 0 32px;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--color-footer);
+            color: white;
+            padding: 40px 48px;
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 0.3px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 6px;
+            transition: opacity 0.2s;
+        }
+
+        footer a:hover {
+            opacity: 0.7;
+        }
+
+        .footer-divider {
+            color: #666;
+            margin: 0 4px;
+        }
+
+        .footer-spacing {
+            margin-top: 16px;
+        }
+
+        /* SECTION COLORS - THEMENBEREICH TRENNUNG */
+        .section-hero {
+            background: #faf8f5;
+        }
+
+        .section-produkt {
+            background: #ffffff;
+        }
+
+        .section-anwendung {
+            background: #faf8f5;
+        }
+
+        .section-app {
+            background: #faf8f5;
+        }
+
+        .section-geschichte {
+            background: #faf8f5;
+        }
+
+        .section-cta {
+            background: #ffffff;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px 24px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+                width: 100%;
+                font-size: 12px;
+            }
+
+            .hero {
+                padding: 60px 0 50px 0;
+            }
+
+            .hero > * {
+                padding: 0 24px;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .hero-links {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                margin-bottom: 60px;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .product-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            section > * {
+                padding: 0 24px;
+            }
+
+            section h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <a href="/" class="logo">SansaFlow</a>
+        <nav>
+            <a href="#produkt">Produkt</a>
+            <a href="#anwendung">Anwendung</a>
+            <a href="#app">App</a>
+            <span class="nav-divider">/</span>
+            <a href="#" onclick="return false;">EN</a>
+            <a href="#produkt" class="btn-header">Jetzt bestellen</a>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero section-hero">
+        <div class="hero-tag">Equine Inhalation</div>
+        <h1>Atmen,  wie es  <em>sein sollte.</em></h1>
+        <p class="hero-description">SansaFlow ist eine präzise gefertigte Inhalationsmaske für Pferde – entwickelt aus persönlicher Erfahrung, optimiert für tägliche Anwendung.</p>
+        
+        <div class="hero-links">
+            <a href="#produkt" class="hero-link">Zum Produkt</a>
+            <a href="#anwendung" class="hero-link">Wie funktioniert es?</a>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">€239</div>
+                <div class="stat-label">Einmaliger Kaufpreis</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Nachfüllbar & wartungsarm</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">Dual</div>
+                <div class="stat-label">Piezo Membran</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">App</div>
+                <div class="stat-label">Kostenfrei</div>
+            </div>
+        </div>
+
+        <div class="product-placeholder">Produktbild folgt</div>
+    </section>
+
+    <!-- PRODUKT -->
+    <section id="produkt" class="section-produkt">
+        <div class="product-section">
+            <div class="product-image-container">
+                <div class="product-placeholder">Produktbild folgt</div>
+            </div>
+            <div class="product-content">
+                <div class="section-subtitle">Das Produkt</div>
+                <h2>Präzision trifft Tierwohlbewusstsein.</h2>
+                <p class="section-intro">Präzision darf nicht teuer sein. SansaFlow ist bewusst fair kalkuliert – damit ein zuverlässiges Inhalationsgerät für jedes Pferd erreichbar ist, nicht nur für wenige.</p>
+
+                <ul class="features-list">
+                    <li><strong>Parametrisch konstruiert</strong> – passt sich verschiedenen Pferdenasen an</li>
+                    <li><strong>Feine Membran: &lt;5 µm Partikelgröße</strong> – ermöglicht Deposition in tieferen Atemwegen für präzise Aerosolverteilung</li>
+                    <li><strong>Gröbere Membran: 5–10 µm Partikelgröße</strong> – höherer Durchsatz (&gt;1 ml/min) für schnellere Nebel-Erzeugung</li>
+                    <li><strong>Jede Membran einzeln steuerbar</strong> – wähle zwischen zwei Partikelgrößen je nach Anwendungsszenario</li>
+                    <li><strong>PETG Gehäuse</strong> – leicht, robust, langlebig</li>
+                    <li><strong>Einfache Reinigung und Wartung</strong></li>
+                </ul>
+
+                <div class="price-box">
+                    <div class="price-amount">€ 239</div>
+                    <div class="price-note">inkl. MwSt. · Versand kostenfrei innerhalb DE</div>
+                    <a href="mailto:info@sansaflow.de" class="btn-primary">Jetzt anfragen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANWENDUNG -->
+    <section id="anwendung" class="section-anwendung">
+        <h2>Anwendung</h2>
+        <div class="section-subtitle">Einfach. Zuverlässig. Täglich.</div>
+
+        <div class="steps-grid">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Befüllen</h3>
+                <p>Inhalationslösung in den Vernebler füllen – unkompliziert und schnell.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Anlegen</h3>
+                <p>Die Maske wird sanft über Nüstern und Maul des Pferdes gelegt. Die anatomische Form sorgt für einen zuverlässigen Sitz.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Inhalieren</h3>
+                <p>Der Dual-Piezo-Vernebler erzeugt einen feinen Nebel – direkt in die Atemwege. 10–15 Minuten pro Anwendung.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- APP -->
+    <section id="app" class="section-app">
+        <div class="section-subtitle">Kostenfrei</div>
+        <h2>SansaFlow App</h2>
+        <div class="section-tagline">Dokumentation, die Sinn macht.</div>
+
+        <ul class="app-features-list">
+            <li><strong>Inhalations-Protokoll</strong> – erfasse Beobachtungen (Husten, Nasenausfluss, Atemaufwand & mehr) in Sekunden</li>
+            <li><strong>Dokumentation</strong> – jede Anwendung erfasst, auch nachträglich</li>
+            <li><strong>Automatische Umweltdaten</strong> – Pollen, Wetter und Luftqualität am Standort deines Pferdes</li>
+            <li><strong>Verlauf & Umweltdaten</strong> – vergleiche deine Aufzeichnungen mit Pollenbelastung und Wetterdaten an deinem Standort</li>
+        </ul>
+
+        <p class="app-note">Die App ist ein eigenständiges Produkt und funktioniert auch ohne Maske – kostenfrei, für Pferdebesitzer, die ihre Atmungsgesundheit verstehen und mögliche Einflussfaktoren erkennen möchten.</p>
+
+        <div class="app-button-container">
+            <a href="https://app.sansaflow.de" class="btn-primary">Zur App</a>
+        </div>
+    </section>
+
+    <!-- GESCHICHTE -->
+    <section class="section-geschichte">
+        <h2>Unsere Geschichte</h2>
+        <div class="quote-block">
+            „Sansa hat uns inspiriert. Die Masken auf dem Markt passten nicht – zu sperrig, zu teuer, zu kompromissreich. Also haben wir zugehört. SansaFlow ist das Ergebnis: eine Maske, die jedes Pferd verdient."
+            <div class="quote-author">Kilian – Gründer, SansaFlow</div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final section-cta">
+        <h2>Bereit für Präzision?</h2>
+        <p>Limitierte Verfügbarkeit in der Einführungsphase – jetzt anfragen.</p>
+        <a href="mailto:info@sansaflow.de" class="btn-primary">Jetzt anfragen</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <a href="/">SansaFlow</a>
+        <div class="footer-spacing">© 2026 SansaFlow</div>
+        <div class="footer-spacing">
+            <a href="mailto:info@sansaflow.de">info@sansaflow.de</a>
+            <span class="footer-divider">·</span>
+            <a href="/impressum.html">Impressum</a>
+            <span class="footer-divider">·</span>
+            <a href="/datenschutz.html">Datenschutz</a>
+        </div>
+    </footer>
+</body>
+</html>
